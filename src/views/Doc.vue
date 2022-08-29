@@ -26,5 +26,21 @@ export default ({
 </script>
 
 <style lang="scss" scoped>
-    
+    aside{
+        background: lightblue;
+        width:50vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding:12px 0;
+        >h2{
+            padding:4px 0;
+        }
+        >ol{
+            >li{
+                padding:4px 0;
+            }
+        }
+    }
 </style>
