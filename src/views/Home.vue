@@ -4,9 +4,9 @@
         <div class="banner">
             <h1>YuYuanUI</h1>
             <h2>一个厉害的UI框架</h2>
-            <p class="action">
-                <a href="">GitHub</a>
-                <a href="">Start</a>
+            <p class="actions">
+                <a href="https://github.com/YuyuanW/yuyuan-ui">GitHub</a>
+                <router-link to="/doc">Start</router-link>
             </p>
         </div>
     </div>
@@ -22,6 +22,34 @@ export default ({
 })
 </script>
 
+
 <style lang="scss" scoped>
-    
+    .banner{
+
+        /* border:1px solid red; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center ;
+
+        padding:100px 0;
+
+        background: lightgreen;
+
+        > .actions{
+            padding: 8px 0;
+            a {
+                margin:0 8px;
+                background: #fff;
+                display: inline-block;
+                $h: 28px;
+                height: $h;
+                line-height: $h;
+                border-radius: $h/2;
+                padding: 0 8px;
+            }
+        }
+
+
+    }
 </style>
