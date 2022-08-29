@@ -1,6 +1,6 @@
 <template>
   <div>
-    导航栏 | <router-link to="/">YuYuan1</router-link> | <router-link to="/2">YuYuan2</router-link>
+    导航栏 | <router-link to="/">YuYuan1</router-link> | <router-link to="/doc">YuYuan2</router-link>
   </div>
   <hr/>
   <router-view />
