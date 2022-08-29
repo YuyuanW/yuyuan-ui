@@ -2,13 +2,13 @@
   <router-view />
 </template>
 
-<script>
-import YuYuan from './components/YuYuan.vue'
-
+<script lang="ts">
+import {ref,provide} from 'vue'
 export default {
   name: 'App',
-  components: {
-    YuYuan
+  setup(){
+    const asideVisible = ref(false)
+    provide('asideVisible',asideVisible)
   }
 }
 </script>
