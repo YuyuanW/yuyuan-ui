@@ -10,7 +10,6 @@ import Test from './views/Test.vue'
 const routes = [
     { path: '/', component: Home },
     { path: '/doc', component: Doc },
-    { path: '/test', component: Test  },
   ]
 
 const router = createRouter({

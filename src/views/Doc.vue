@@ -18,7 +18,5 @@ export default ({
 </script>
 
 <style lang="scss" scoped>
-    .content{
-        border:1px solid red;
-    }
+    
 </style>
