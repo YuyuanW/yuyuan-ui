@@ -1,11 +1,14 @@
 <template>
-     <div class="topnav">
-            <div class="logo" @click="toggleAside">LOGO</div>
-            <ul class="menu">
-                <li>菜单1</li>
-                <li>菜单2</li>
-            </ul>
-        </div>
+     <div class="position">
+         <div class="topnav">
+                <div class="logo" >LOGO</div>
+                <ul class="menu">
+                    <li>菜单1</li>
+                    <li>菜单2</li>
+                </ul>
+                <span class="toggleAside" @click="toggleAside"></span>
+            </div>
+     </div>
 </template>
 
 <script lang="ts">
@@ -27,9 +30,11 @@ export default ({
     background: pink;
     display: flex;
     padding: 16px;
+    position: relative;
     > .logo {
         max-width: 6em;
         margin-right: auto;
+
     }
     > .menu {
         display: flex;
@@ -37,6 +42,27 @@ export default ({
         flex-wrap: nowrap;
         > li {
         margin: 0 1em;
+        }
+    }
+    .toggleAside{
+        display: inline-block;
+        width:24px;
+        height: 24px;
+        left:16px;
+        top:50%;
+        background: red;
+        position:absolute;
+        transform:translateY(-50%);
+        /* z-index: 2; */
+    }
+    @media (max-width: 500px){
+        .menu{
+            display: none;
+        }
+        .logo{
+            justify-content: center;
+            align-items: center ;
+            margin:0 auto;
         }
     }
 }
