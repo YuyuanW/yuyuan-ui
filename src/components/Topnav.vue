@@ -16,7 +16,7 @@ import { inject,Ref,ref } from "vue"
 export default ({
     name:'Topnav',
     setup(){
-        let asideVisible = inject<Ref<boolean>>('asideVisible') || ref(false)
+        let asideVisible = inject<Ref<boolean>>('asideVisible') !
         const toggleAside = ()=>{
             asideVisible.value = !asideVisible.value
         }
@@ -45,15 +45,14 @@ export default ({
         }
     }
     .toggleAside{
-        display: inline-block;
+        display: none;
         width:24px;
         height: 24px;
         left:16px;
         top:50%;
         background: red;
         position:absolute;
-        transform:translateY(-50%);
-        /* z-index: 2; */
+        transform:translateY(-50%); 
     }
     @media (max-width: 500px){
         .menu{
@@ -63,6 +62,9 @@ export default ({
             justify-content: center;
             align-items: center ;
             margin:0 auto;
+        }
+        .toggleAside{
+            display: inline-block;
         }
     }
 }

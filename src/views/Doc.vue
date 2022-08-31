@@ -25,7 +25,6 @@ export default ({
     },
     setup(){
         const asideVisible = inject<Ref<boolean>>('asideVisible')
-        console.log(asideVisible)
         return {asideVisible}
     }
 })
@@ -36,7 +35,7 @@ export default ({
         /* border:1px solid red; */
         position:relative;
         > aside{
-            position:absolute;
+            
             background: lightblue;
             width:50vw;
             display: flex;
@@ -52,6 +51,12 @@ export default ({
                     padding:4px 0;
                 }
             }
+        }
+    }
+    @media (max-width:500px) {
+        aside{
+            
+            position:absolute;
         }
     }
     
