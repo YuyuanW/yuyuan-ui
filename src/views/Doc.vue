@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { inject , Ref } from '@vue/runtime-core';
+import { inject , Ref } from 'vue';
 import Topnav from '../components/Topnav.vue';
 export default ({
     components:{
@@ -32,21 +32,27 @@ export default ({
 </script>
 
 <style lang="scss" scoped>
-    aside{
-        background: lightblue;
-        width:50vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding:12px 0;
-        >h2{
-            padding:4px 0;
-        }
-        >ol{
-            >li{
+    .content{
+        /* border:1px solid red; */
+        position:relative;
+        > aside{
+            position:absolute;
+            background: lightblue;
+            width:50vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:12px 0;
+            >h2{
                 padding:4px 0;
+            }
+            >ol{
+                >li{
+                    padding:4px 0;
+                }
             }
         }
     }
+    
 </style>

@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import { inject,Ref,ref } from "@vue/runtime-core"
+import { inject,Ref,ref } from "vue"
 export default ({
     name:'Topnav',
     setup(){
