@@ -1,110 +1,15 @@
 <template>
     <div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
-        <div>这是switch的内容</div>
+        <Switch/>
     </div>
+    
 </template>
 
 <script lang="ts">
+import Switch from '../../lib/Switch.vue';
+
 export default ({
-    name:'SwitchDemo'
+    name:'SwitchDemo',
+    components:{Switch}
 })
 </script>
