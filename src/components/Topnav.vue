@@ -1,14 +1,12 @@
 <template>
-     <div class="position">
-         <div class="topnav">
-                <div class="logo" >LOGO</div>
-                <ul class="menu">
-                    <li>菜单1</li>
-                    <li>菜单2</li>
-                </ul>
-                <span class="toggleAside" @click="toggleAside"></span>
-            </div>
-     </div>
+  <div class="topnav">
+    <div class="logo">LOGO</div>
+    <ul class="menu">
+      <li>菜单1</li>
+      <li>菜单2</li>
+    </ul>
+    <span class="toggleAside" @click="toggleAside"></span>
+  </div>
 </template>
 
 <script lang="ts">
@@ -27,45 +25,48 @@ export default ({
 
 <style lang="scss" scoped>
 .topnav {
-    background: pink;
+  background: pink;
+  display: flex;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  > .logo {
+    max-width: 6em;
+    margin-right: auto;
+  }
+  > .menu {
     display: flex;
-    padding: 16px;
-    position: relative;
-    > .logo {
-        max-width: 6em;
-        margin-right: auto;
-
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    > li {
+      margin: 0 1em;
     }
+  }
+  > .toggleAside {
+    width: 24px;
+    height: 24px;
+    background: red;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+  }
+  @media (max-width: 500px) {
     > .menu {
-        display: flex;
-        white-space: nowrap;
-        flex-wrap: nowrap;
-        > li {
-        margin: 0 1em;
-        }
+      display: none;
     }
-    .toggleAside{
-        display: none;
-        width:24px;
-        height: 24px;
-        left:16px;
-        top:50%;
-        background: red;
-        position:absolute;
-        transform:translateY(-50%); 
+    > .logo {
+      margin: 0 auto;
     }
-    @media (max-width: 500px){
-        .menu{
-            display: none;
-        }
-        .logo{
-            justify-content: center;
-            align-items: center ;
-            margin:0 auto;
-        }
-        .toggleAside{
-            display: inline-block;
-        }
+    > .toggleAside {
+      display: inline-block;
     }
+  }
 }
 </style>
