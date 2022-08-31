@@ -15,7 +15,7 @@ export default ({
         width:$h *2;
         height: $h;
         border:none;
-        border-radius: $h/2;
+        border-radius: $h / 2;
         background: blue;
         position: relative;
         > span{
@@ -26,6 +26,10 @@ export default ({
             border-radius: $h2/2;
             top:2px;
             left:2px;
+            
         }
+    }
+    button:hover > span {
+        left:calc(100% - $h2 - 2px);
     }
 </style>
