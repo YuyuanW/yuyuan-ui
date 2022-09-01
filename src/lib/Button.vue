@@ -1,5 +1,6 @@
 <template>
-    <button class="yuyuan-button" :class="classes">
+    <button class="yuyuan-button" :class="classes" :disabled="disabled">
+        <span v-if="loading" class="yuyuan-loadingIndicator"></span>
         <slot></slot>
     </button>
 </template>
@@ -21,6 +22,14 @@ export default{
         level:{
             type:String,
             default:'normal'
+        },
+        disabled:{
+            type:Boolean,
+            default:false
+        },
+        loading:{
+            type:Boolean,
+            default:false
         }
     },
     setup(props){
@@ -158,11 +167,38 @@ export default{
             }
         }
 
-        
+        &.yuyuan-theme-button {
+            &[disabled] {
+                cursor: not-allowed;
+                color: $grey;
+                &:hover {
+                    border-color: $grey;
+                }
+            }           
+        }
 
+        &.yuyuan-theme-link, &.yuyuan-theme-text {
+            &[disabled] {
+                cursor: not-allowed;
+                color: $grey;
+            }
+        }
+
+     > .yuyuan-loadingIndicator{
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        margin-right: 4px;
+        border-radius: 8px; 
+        border-color: $blue $blue $blue transparent;
+        border-style: solid;
+        border-width: 2px;
+        animation: yuyuan-spin 1s infinite linear;
     }
-
-    
-
+}
+@keyframes yuyuan-spin {
+  0%{transform: rotate(0deg)} 
+  100%{transform: rotate(360deg)} 
+}
 
 </style>
