@@ -1,8 +1,13 @@
 <template>
     <div>
-        <h2>我是button</h2>
+        <span>
+            button示例
+        </span>
+        <h2>示例1</h2>
         <div>
-            <Button @click="onClick" @mouseover="onClick" @focus="onClick" size="small">你好</Button>
+            <Button theme="button" >halo</Button>
+            <Button theme="link" >halo</Button>
+            <Button theme="text" >halo</Button>
         </div>
     </div>
 </template>
@@ -13,11 +18,5 @@ import Button from '../../lib/Button.vue';
 export default {
     name:'ButtonDemo',
     components: { Button },
-    setup(){
-        const onClick = ()=>{
-            console.log('hi')
-        }
-        return {onClick}
-    }
 }
 </script>
