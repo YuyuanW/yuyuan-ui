@@ -17,14 +17,19 @@ export default{
         size:{
             type:String,
             default:'normal'
+        },
+        level:{
+            type:String,
+            default:'normal'
         }
     },
     setup(props){
-        const {theme,size}  = props;
+        const {theme,size,level}  = props;
         const classes = computed(()=>{
             return {
                 [`yuyuan-theme-${theme}`]:theme,
-                [`yuyuan-size-${size}`]:size
+                [`yuyuan-size-${size}`]:size,
+                [`yuyuan-level-${level}`]:level,
             }
         })
         return {classes}
@@ -38,6 +43,8 @@ export default{
     $color:#333;
     $radius:4px;
     $blue:#40a9ff;
+    $red:red;
+    $grey:grey;
     .yuyuan-button{
         box-sizing:border-box;
         height:$h;
@@ -98,6 +105,61 @@ export default{
                 padding: 0 4px;
             }
         }
+
+        &.yuyuan-theme-button{
+            &.yuyuan-level-main{
+                background: $blue;
+                color: white;
+                border-color: $blue;
+                &:hover,
+                &:focus {
+                    background: darken($blue, 10%);
+                    border-color: darken($blue, 10%);
+                }            
+            }
+
+            &.yuyuan-level-danger{
+                background: $red;
+                color: white;
+                border-color: $red;
+                &:hover,
+                &:focus {
+                    background: darken($red, 10%);
+                    border-color: darken($red, 10%);
+                }            
+
+            }
+        }
+
+        &.yuyuan-theme-link{
+            &.yuyuan-level-danger {
+                color: $red;
+                &:hover,
+                &:focus {
+                    color: darken($red, 10%);
+                }
+            }
+        }
+
+        &.yuyuan-theme-text{
+            &.yuyuan-level-main {
+                color: $blue;
+                &:hover,
+                &:focus {
+                    color: darken($blue, 10%);
+                }
+            }
+            &.yuyuan-level-danger {
+                color: $red;
+                &:hover,
+                &:focus {
+                    color: darken($red, 10%);
+                }
+            }
+        }
+
+        
+
     }
 
     
