@@ -13,8 +13,8 @@ const routes = [
       children:[
         {path:'switch',component:SwitchDemo},
         {path:'button',component:ButtonDemo},
-        {path:'Dialog',component:DialogDemo},
-        {path:'switch',component:TabsDemo},
+        {path:'dialog',component:DialogDemo},
+        {path:'tabs',component:TabsDemo},
       ]
     },
   ]

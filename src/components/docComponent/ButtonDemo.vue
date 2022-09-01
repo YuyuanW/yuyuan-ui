@@ -2,7 +2,7 @@
     <div>
         <h2>我是button</h2>
         <div>
-            <Button>你好</Button>
+            <Button @click="onClick" @mouseover="onClick" @focus="onClick">你好</Button>
         </div>
     </div>
 </template>
@@ -12,6 +12,12 @@ import Button from '../../lib/Button.vue';
 
 export default {
     name:'ButtonDemo',
-    components: { Button }
+    components: { Button },
+    setup(){
+        const onClick = ()=>{
+            console.log('hi')
+        }
+        return {onClick}
+    }
 }
 </script>
