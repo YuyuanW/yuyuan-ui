@@ -52,5 +52,23 @@ export default{
         &::-moz-focus-inner{
             border:0;
         }
+        &.yuyuan-theme-link{
+            background: none;
+            border-color: transparent;
+            box-shadow: none;
+            color: $blue;
+            &:hover,&:focus{
+            color: lighten($blue, 10%);
+            }
+        }
+        &.yuyuan-theme-text{
+            background: none;
+            border-color: transparent;
+            box-shadow: none;
+            color: inherit;
+            &:hover,&:focus{
+            background: darken(white, 5%);;
+            }
+        }
     }
 </style>
