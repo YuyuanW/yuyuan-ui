@@ -2,7 +2,7 @@
     <div>
         <h2>我是button</h2>
         <div>
-            <Button @click="onClick" @mouseover="onClick" @focus="onClick">你好</Button>
+            <Button @click="onClick" @mouseover="onClick" @focus="onClick" size="small">你好</Button>
         </div>
     </div>
 </template>
