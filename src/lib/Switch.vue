@@ -1,5 +1,5 @@
 <template>
-    <button @click="toggle" :class="{checked : value}"><span></span></button>
+    <button class="yuyuan-switch" @click="toggle" :class="{'yuyuan-checked' : value}"><span></span></button>
 </template>
 
 <script lang="ts">
@@ -20,7 +20,7 @@ export default ({
 <style lang="scss">
     $h : 22px;
     $h2 : $h - 4px;
-    button{
+    .yuyuan-switch{
         width:$h *2;
         height: $h;
         border:none;
@@ -37,15 +37,30 @@ export default ({
             left:2px;
             transition: left 250ms;
         }
-    }
-    button.checked{
-        background: blue;
-        > span {
-            left:calc(100% - $h2 - 2px);
-        }
-    } 
 
-    button:focus{
-        outline:none;
+        &.yuyuan-checked{
+            background: blue;
+            > span {
+                left:calc(100% - $h2 - 2px);
+            }
+        }    
+
+        &:focus{
+            outline:none;
+        }
+        &:active{
+            > span{
+                width:$h2+4px;
+            }
+        }
+        &.yuyuan-checked:active{
+            >span{
+                width:$h2+4px;
+                margin-left:-4px;
+            }
+        }
     }
+    
+
+    
 </style>
