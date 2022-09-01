@@ -1,13 +1,21 @@
 <template>
     <div>
-        <span>
-            button示例
-        </span>
+        <div>
+            Button示例
+        </div>
         <h2>示例1</h2>
         <div>
             <Button theme="button" >halo</Button>
             <Button theme="link" >halo</Button>
             <Button theme="text" >halo</Button>
+        </div>
+
+
+        <h2>示例2</h2>
+        <div>
+            <Button size="small">small</Button>
+            <Button>normal</Button>
+            <Button size="big" >big</Button>
         </div>
     </div>
 </template>

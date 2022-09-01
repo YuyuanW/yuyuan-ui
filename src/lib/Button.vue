@@ -1,10 +1,11 @@
 <template>
-    <button class="yuyuan-button" :class="`yuyuan-theme-${theme}`">
+    <button class="yuyuan-button" :class="classes">
         <slot></slot>
     </button>
 </template>
 
 <script lang="ts">
+import { computed } from '@vue/runtime-core'
 
 export default{
     name:'Button',
@@ -12,7 +13,21 @@ export default{
         theme:{
             type:String,
             default:'button'
+        },
+        size:{
+            type:String,
+            default:'normal'
         }
+    },
+    setup(props){
+        const {theme,size}  = props;
+        const classes = computed(()=>{
+            return {
+                [`yuyuan-theme-${theme}`]:theme,
+                [`yuyuan-size-${size}`]:size
+            }
+        })
+        return {classes}
     }
 }
 </script>
@@ -70,5 +85,22 @@ export default{
             background: darken(white, 5%);;
             }
         }
+
+        &.yuyuan-theme-button{
+            &.yuyuan-size-big{
+                font-size: 24px;
+                height: 48px;
+                padding: 0 16px
+            }
+            &.yuyuan-size-small{
+                font-size: 12px;
+                height: 20px;
+                padding: 0 4px;
+            }
+        }
     }
+
+    
+
+
 </style>
