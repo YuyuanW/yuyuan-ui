@@ -1,6 +1,6 @@
 <template>
     <div v-if="visible">
-        <Teleport to='body'>
+        <Teleport to="body">
             <div class="yuyuan-dialog-overlay" @click="onClickOverlay"></div>
             <div class="yuyuan-dialog-wrapper">
                 <div class="yuyuan-dialog">
