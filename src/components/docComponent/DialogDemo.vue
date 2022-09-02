@@ -5,9 +5,14 @@
     <h1>示例1</h1>
     <Button @click="toggleDialog">toggle</Button>
     <Dialog v-model:visible="visible" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
-        <p>你好</p>
-        <p>halo</p>
-        </Dialog>
+        <template v-slot:content>
+            <strong>你好</strong>
+            <p>halo</p>
+        </template>
+        <template #title>
+            <strong>加粗的标题</strong>
+        </template>
+    </Dialog>
     
 </template>
 

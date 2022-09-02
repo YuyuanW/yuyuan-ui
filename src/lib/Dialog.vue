@@ -3,9 +3,12 @@
         <div class="yuyuan-dialog-overlay" @click="onClickOverlay"></div>
         <div class="yuyuan-dialog-wrapper">
             <div class="yuyuan-dialog">
-                <header>{{title}}<span @click="close" class="yuyuan-dialog-close"></span></header>
+                <header>
+                    <slot name="title"></slot>
+                    <span @click="close" class="yuyuan-dialog-close"></span>
+                </header>
                 <main>
-                    <slot></slot>
+                    <slot name="content"></slot>
                 </main>
                 <footer>
                     <Button level="main" @click="ok">OK</Button>
@@ -22,10 +25,6 @@ export default ({
     name:'Dialog',
     components:{Button},
     props:{
-        title:{
-            type:String,
-            default:'提示'
-        },
         visible : {
             type:String,
             default:false
