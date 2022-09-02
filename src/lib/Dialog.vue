@@ -1,16 +1,16 @@
 <template>
     <div v-if="visible">
-        <div class="yuyuan-dialog-overlay"></div>
+        <div class="yuyuan-dialog-overlay" @click="onClickOverlay"></div>
         <div class="yuyuan-dialog-wrapper">
             <div class="yuyuan-dialog">
-                <header>标题<span class="yuyuan-dialog-close"></span></header>
+                <header>标题<span @click="close" class="yuyuan-dialog-close"></span></header>
                 <main>
                     <p>第一行字</p>
                     <p>第二行字</p>
                 </main>
                 <footer>
-                    <Button level="main">OK</Button>
-                    <Button>Cancel</Button>
+                    <Button level="main" @click="ok">OK</Button>
+                    <Button @click="cancel">Cancel</Button>
                 </footer>
             </div>
         </div>
@@ -26,9 +26,39 @@ export default ({
         visible : {
             type:String,
             default:false
+        },
+        closeOnClickOverlay : {
+            type:String,
+            default:true
+        },
+        ok:{
+            type:Function
+        },
+        cancel:{
+            type:Function
         }
     },
-    
+    setup(props,context){
+        const close = ()=>{
+            context.emit('update:visible',false)
+        }
+        const onClickOverlay = ()=>{
+            if(props.closeOnClickOverlay){
+                close()
+            }
+        }
+        const ok = ()=>{
+            if(props.ok && props.ok()){
+                close()
+            }
+        }
+        const cancel = ()=>{
+            if(props.cancel?.()){
+                close()
+            }
+        }
+        return {close,onClickOverlay,ok,cancel}
+    }
 })
 </script>
 

@@ -4,7 +4,7 @@
     </div>
     <h1>示例1</h1>
     <Button @click="toggleDialog">toggle</Button>
-    <Dialog :visible="visible"></Dialog>
+    <Dialog v-model:visible="visible" :closeOnClickOverlay="false" :ok="f1" :cancel="f2"></Dialog>
     
 </template>
 
@@ -20,7 +20,15 @@ export default {
         const toggleDialog = ()=>{
             visible.value = !visible.value
         }
-        return {visible,toggleDialog}
+        const f1 = ()=>{
+            // console.log(1)
+            return false
+        }
+        const f2 = ()=>{
+            // console.log(2)
+            return true
+        }
+        return {visible,toggleDialog,f1,f2}
     }
 }
 </script>
