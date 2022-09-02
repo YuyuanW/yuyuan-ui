@@ -1,21 +1,23 @@
 <template>
     <div v-if="visible">
-        <div class="yuyuan-dialog-overlay" @click="onClickOverlay"></div>
-        <div class="yuyuan-dialog-wrapper">
-            <div class="yuyuan-dialog">
-                <header>
-                    <slot name="title"></slot>
-                    <span @click="close" class="yuyuan-dialog-close"></span>
-                </header>
-                <main>
-                    <slot name="content"></slot>
-                </main>
-                <footer>
-                    <Button level="main" @click="ok">OK</Button>
-                    <Button @click="cancel">Cancel</Button>
-                </footer>
+        <Teleport to='body'>
+            <div class="yuyuan-dialog-overlay" @click="onClickOverlay"></div>
+            <div class="yuyuan-dialog-wrapper">
+                <div class="yuyuan-dialog">
+                    <header>
+                        <slot name="title"></slot>
+                        <span @click="close" class="yuyuan-dialog-close"></span>
+                    </header>
+                    <main>
+                        <slot name="content"></slot>
+                    </main>
+                    <footer>
+                        <Button level="main" @click="ok">OK</Button>
+                        <Button @click="cancel">Cancel</Button>
+                    </footer>
+                </div>
             </div>
-        </div>
+        </Teleport>
     </div>
 </template>
 
