@@ -1,16 +1,18 @@
 <template>
-    <div class="yuyuan-dialog-overlay"></div>
-    <div class="yuyuan-dialog-wrapper">
-        <div class="yuyuan-dialog">
-            <header>标题<span class="yuyuan-dialog-close"></span></header>
-            <main>
-                <p>第一行字</p>
-                <p>第二行字</p>
-            </main>
-            <footer>
-                <Button level="main">OK</Button>
-                <Button>Cancel</Button>
-            </footer>
+    <div v-if="visible">
+        <div class="yuyuan-dialog-overlay"></div>
+        <div class="yuyuan-dialog-wrapper">
+            <div class="yuyuan-dialog">
+                <header>标题<span class="yuyuan-dialog-close"></span></header>
+                <main>
+                    <p>第一行字</p>
+                    <p>第二行字</p>
+                </main>
+                <footer>
+                    <Button level="main">OK</Button>
+                    <Button>Cancel</Button>
+                </footer>
+            </div>
         </div>
     </div>
 </template>
@@ -20,6 +22,13 @@ import Button from './Button.vue';
 export default ({
     name:'Dialog',
     components:{Button},
+    props:{
+        visible : {
+            type:String,
+            default:false
+        }
+    },
+    
 })
 </script>
 
