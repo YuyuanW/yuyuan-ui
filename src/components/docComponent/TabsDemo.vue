@@ -3,6 +3,7 @@
     <h1>示例1</h1>
     <Tabs>
         <Tab></Tab>
+        <Tab></Tab>
     </Tabs>
 </template>
 
