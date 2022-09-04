@@ -52,14 +52,16 @@ export default ({
             color:$color;
             border-bottom:1px solid $border-color;
             &-item{
-                padding:8px 0;
-                margin:0px 16px;
+                padding:8px 16px;
+                
                 cursor: pointer;
                 &:first-child{
-                    margin-left:0;
+                    padding-left:0;
                 };
                 &.selected{
                     color:$blue;
+                    box-shadow: 0px 3px 0px ($blue);
+                    /* border-bottom:3px solid $blue */
                 }
             };
         };
