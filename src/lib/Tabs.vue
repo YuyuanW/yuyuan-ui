@@ -70,6 +70,7 @@ export default ({
             &-item{
                 display: none;
                 &.selected{
+                    //
                     display: block;
                 }
             }
