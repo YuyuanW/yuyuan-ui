@@ -71,18 +71,25 @@ export default ({
     aside {
       background: lightblue;
       width: 150px;
-      padding: 16px;
+      padding: 16px 0px;
       position: fixed;
       top: 0;
       left: 0;
       padding-top: 70px;
       height: 100%;
       > h2 {
-        margin-bottom: 4px;
+        margin: 4px 16px;
       }
       > ol {
         > li {
-          padding: 4px 0;
+          >a{
+            display: block;
+            padding: 4px 16px ;
+          }
+          > .router-link-active{
+            background:white;
+            text-decoration: none;
+          }
         }
       }
     }
