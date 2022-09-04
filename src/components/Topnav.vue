@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { inject,Ref,ref } from "vue"
+import { inject,Ref } from "vue"
 export default ({
     name:'Topnav',
     setup(){
