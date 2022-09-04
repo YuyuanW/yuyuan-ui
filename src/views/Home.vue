@@ -24,11 +24,14 @@ export default ({
 
 
 <style lang="scss" scoped>
+    $green:#02bcb0;
+    $border-radius:4px;
+    $color:rgb(98 147 144);
     .topnavAndBanner{
         background: linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(29,29,29,1) 0%, rgba(227,255,253,1) 0%, rgba(183,233,230,1) 100%);
     }
     .banner{
-
+        color:$color;
         /* border:1px solid red; */
         display: flex;
         flex-direction: column;
@@ -42,14 +45,17 @@ export default ({
         > .actions{
             padding: 8px 0;
             a {
+
                 margin:0 8px;
-                background: #fff;
+                background: $green;
+                color:white;
                 display: inline-block;
                 $h: 28px;
-                height: $h;
-                line-height: $h;
-                border-radius: $h/2;
-                padding: 0 8px;
+                border-radius: $border-radius;
+                padding: 8px 24px;
+                &:hover{
+                    text-decoration: none;
+                }
             }
         }
 
