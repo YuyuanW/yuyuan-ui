@@ -6,10 +6,15 @@
     </svg>
     </div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc">首页</router-link>
+      </li>
     </ul>
-    <span class="toggleAside" @click="toggleAside"></span>
+    <!-- <span class="toggleAside" @click="toggleAside"> -->
+      <svg v-if='iconAsideVisible' class="toggleAside" @click="toggleAside" >
+        <use xlink:href="#icon-liebiao"></use>
+      </svg>
+    <!-- </span> -->
   </div>
 </template>
 
@@ -22,7 +27,14 @@ export default ({
         const toggleAside = ()=>{
             asideVisible.value = !asideVisible.value
         }
+        console.log(asideVisible)
         return {toggleAside}
+    },
+    props:{
+        iconAsideVisible : {
+          type:Boolean,
+          default:false
+        }
     }
 })
 </script>
@@ -61,13 +73,14 @@ export default ({
     }
   }
   > .toggleAside {
-    width: 24px;
-    height: 24px;
-    background: red;
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
+    
+      width:32px ;
+      height:32px;
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    
     display: none;
   }
   @media (max-width: 500px) {
