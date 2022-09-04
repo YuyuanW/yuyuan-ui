@@ -27,7 +27,6 @@ export default ({
         const toggleAside = ()=>{
             asideVisible.value = !asideVisible.value
         }
-        console.log(asideVisible)
         return {toggleAside}
     },
     props:{

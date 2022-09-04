@@ -1,6 +1,8 @@
 <template>
     <div class="layout">
         <Topnav class='nav' iconAsideVisible="true"/>
+        <div>
+        </div>
         <div class="content">
             <aside v-if="asideVisible">
                 <h2>组件列表</h2>
