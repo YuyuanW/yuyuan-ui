@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="topnavAndBanner">
        <Topnav></Topnav>
         <div class="banner">
             <h1>YuYuanUI</h1>
@@ -24,6 +24,9 @@ export default ({
 
 
 <style lang="scss" scoped>
+    .topnavAndBanner{
+        background: linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(29,29,29,1) 0%, rgba(227,255,253,1) 0%, rgba(183,233,230,1) 100%);
+    }
     .banner{
 
         /* border:1px solid red; */
@@ -34,7 +37,7 @@ export default ({
 
         padding:100px 0;
 
-        background: lightgreen;
+        /* background: lightgreen; */
 
         > .actions{
             padding: 8px 0;
