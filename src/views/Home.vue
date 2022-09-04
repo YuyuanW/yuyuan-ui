@@ -10,6 +10,17 @@
             </p>
         </div>
     </div>
+    <div class="yuyuan-icon">
+        <svg class="icon">
+            <use xlink:href="#icon-Vue"></use>
+        </svg>
+        <svg class="icon">
+            <use xlink:href="#icon-typescript-def"></use>
+        </svg>
+        <svg class="icon">
+            <use xlink:href="#icon-lighting"></use>
+        </svg>
+    </div>
 </template>
 
 <script lang="ts">
@@ -60,5 +71,15 @@ export default ({
         }
 
 
+    }
+
+    .yuyuan-icon{
+        >.icon{
+            width: 64px; 
+            height: 64px;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
     }
 </style>
