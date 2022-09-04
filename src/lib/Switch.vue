@@ -27,6 +27,7 @@ export default ({
         border-radius: $h / 2;
         background: gray;
         position: relative;
+        z-index: -1;
         > span{
             position: absolute;
             height:$h2;
