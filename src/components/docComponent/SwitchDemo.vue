@@ -7,26 +7,26 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <Switch1></Switch1>
+        <component :is="Switch1"></component>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+        <pre>{{ Switch1.__sourceCode }}</pre>
       </div>
     </div>
 
     <div class="demo">
       <h2>支持 disabled</h2>
       <div class="demo-component">
-        <Switch2></Switch2>
+        <component :is="Switch2"></component>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+        <pre>{{ Switch2.__sourceCode }}</pre>
       </div>
     </div>
   </div>
@@ -41,10 +41,10 @@ import Switch2 from "../switchComponent/Switch2.vue";
 
 export default {
   name: "SwitchDemo",
-  components: { Switch, Button, Switch1, Switch2 },
+  components: { Switch, Button },
   setup() {
     const bool = ref(false);
-    return { bool };
+    return { bool, Switch1, Switch2 };
   },
 };
 </script>
