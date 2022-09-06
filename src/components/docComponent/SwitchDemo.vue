@@ -9,7 +9,6 @@
 </template>
 
 <script lang="ts">
-import { ref } from "vue";
 import Switch1 from "../switchComponent/Switch1.vue";
 import Switch2 from "../switchComponent/Switch2.vue";
 
@@ -19,8 +18,7 @@ export default {
   name: "SwitchDemo",
   components: { Demo },
   setup() {
-    const bool = ref(false);
-    return { bool, Switch1, Switch2 };
+    return { Switch1, Switch2 };
   },
 };
 </script>
