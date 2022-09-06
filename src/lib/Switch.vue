@@ -27,11 +27,12 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
+$h3: 11px;
 .yuyuan-switch {
   width: $h * 2;
   height: $h;
   border: none;
-  border-radius: 11px;
+  border-radius: $h3;
   background: gray;
   position: relative;
   z-index: 0;
@@ -40,7 +41,7 @@ $h2: $h - 4px;
     height: $h2;
     width: $h2;
     background: white;
-    border-radius: $h2/2;
+    border-radius: $h3;
     top: 2px;
     left: 2px;
     transition: left 250ms;
