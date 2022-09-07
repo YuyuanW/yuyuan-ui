@@ -8,6 +8,7 @@ import {baseParse} from '@vue/compiler-core'
 export default {
   base:'./',
   assetsDir:"assets",
+  // favicon:path.resolve('favicon.icon'),
   plugins: [md()],
   vueCustomBlockTransforms: {
     demo: (options) => {
