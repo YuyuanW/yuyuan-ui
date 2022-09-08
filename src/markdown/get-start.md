@@ -4,10 +4,13 @@
 然后在你的代码中写入下面的代码
 
 ```
-import {Button, Tabs, Switch, Dialog} from "yuyuan-ui"
+import {Button, Tabs, Tab , Switch, Dialog , openDialog } from "yuyuan-ui-one"
 ```
-
-就可以使用我提供的组件了。
+为了样式的正常显示，需要引入一下css文件：
+```
+import 'yuyuan-ui-one/dist/lib/yuyuan.css'
+```
+然后就可以参考下面的组件部分的代码，使用我提供的组件了。
 
 ## Vue 单文件组件
 
@@ -20,7 +23,8 @@ import {Button, Tabs, Switch, Dialog} from "yuyuan-ui"
   </div>
 </template>
 <script>
-import {Button, Tabs, Switch, Dialog} from "yuyuan-ui"
+import { Switch, Button, Tabs, Dialog, openDialog, Tab } from "yuyuan-ui-one";
+import "yuyuan-ui-one/dist/lib/yuyuan.css";
 export default {
   components: {Button}
 }

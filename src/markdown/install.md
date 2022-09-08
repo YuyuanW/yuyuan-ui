@@ -3,13 +3,13 @@
 打开终端运行下列命令：
 
 ```
-npm install yuyuan-ui
+npm install yuyuan-ui-one
 ```
 
 或
 
 ```
-yarn add yuyuan-ui
+yarn add yuyuan-ui-one
 ```
 
 下一节：[开始使用](#/doc/get-start)
