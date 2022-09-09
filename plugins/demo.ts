@@ -7,13 +7,13 @@ export function demo() {
     name: 'demo',
     transform(code, id) {
       if (
-        !/\/src\/components\/.*\.demo\.vue/.test(id) ||
+        !/\/src\/components\/.*Demo\/.*\.vue/.test(id) ||
         !/vue&type=demo/.test(id)
       ) {
         return;
       }
 
-      let path = `.${id.match(/\/src\/components\/.*\.demo\.vue/)[0]}`;
+      let path = `.${id.match(/\/src\/components\/.*Demo\/.*\.vue/)[0]}`;
       const file = fs.readFileSync(path).toString();
       const parsed = baseParse(file).children.find(n => n.tag === 'demo')
       const title = parsed.children[0].content

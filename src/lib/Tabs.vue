@@ -1,24 +1,24 @@
 <template>
   <div class="yuyuan-tabs">
-    <div class="yuyuan-tabs-nav">
+    <div class="yuyuan-tabs-nav" ref="container">
       <div
         class="yuyuan-tabs-nav-item"
         v-for="(t, index) in titles"
-        :key="index"
+        :ref="
+          (el) => {
+            if (t === selected) selectedItem = el;
+          }
+        "
         @click="select(t)"
-        :class="{ selected: selected === t }"
+        :class="{ selected: t === selected }"
+        :key="index"
       >
         {{ t }}
       </div>
+      <div class="yuyuan-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="yuyuan-tabs-content">
-      <component
-        class="yuyuan-tabs-content-item"
-        v-for="(c, index) in defaults"
-        :key="index"
-        :is="c"
-        :class="{ selected: selected === c.props.title }"
-      ></component>
+      <component :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@
 <script lang="ts" setup="props, context">
 import Tab from "./Tab.vue";
 import { computed, ref, watchEffect, onMounted, useSlots } from "vue";
-// ** References: https://vitejs.dev/guide/features.html#typescript */
+/** References: https://vitejs.dev/guide/features.html#typescript */
 import type { Component } from "vue";
 const props = defineProps<{ selected: string }>();
 const emit = defineEmits<{
@@ -35,7 +35,6 @@ const emit = defineEmits<{
 const selectedItem = ref<HTMLDivElement>(null);
 const indicator = ref<HTMLDivElement>(null);
 const container = ref<HTMLDivElement>(null);
-
 onMounted(() => {
   watchEffect(
     () => {
@@ -58,15 +57,12 @@ defaults.forEach((tag) => {
     throw new Error("Tabs 子标签必须是 Tab");
   }
 });
-
 const current = computed(() => {
   return defaults.find((tag) => tag.props.title === props.selected);
 });
-
 const titles = defaults.map((tag) => {
   return tag.props.title;
 });
-
 const select = (title: string) => {
   emit("update:selected", title);
 };
@@ -76,35 +72,35 @@ const select = (title: string) => {
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
-
 .yuyuan-tabs {
   &-nav {
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
     &-item {
-      padding: 8px 16px;
-
+      padding: 8px 0;
+      margin: 0 16px;
       cursor: pointer;
       &:first-child {
-        padding-left: 0;
+        margin-left: 0;
       }
       &.selected {
         color: $blue;
-        box-shadow: 0px 3px 0px ($blue);
-        /* border-bottom:3px solid $blue */
       }
+    }
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
+      transition: all 250ms;
     }
   }
   &-content {
     padding: 8px 0;
-    &-item {
-      display: none;
-      &.selected {
-        //
-        display: block;
-      }
-    }
   }
 }
 </style>
