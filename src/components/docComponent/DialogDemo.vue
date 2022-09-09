@@ -10,12 +10,11 @@
 import Demo from "../Demo.vue";
 import Dialog1 from "../dialogDemo/Dialog1.vue";
 import Dialog2 from "../dialogDemo/Dialog2.vue";
-import Switch1 from "../switchComponent/Switch1.vue";
 
 export default {
-  components: { Demo, Switch1 },
+  components: { Demo },
   setup() {
-    return { Demo, Dialog1, Dialog2, Switch1 };
+    return { Demo, Dialog1, Dialog2 };
   },
 };
 </script>
