@@ -79,8 +79,8 @@ $border-color: #d9d9d9;
     border-bottom: 1px solid $border-color;
     position: relative;
     &-item {
-      padding: 8px 0;
-      margin: 0 16px;
+      padding: 8px 12px;
+      margin: 0 4px;
       cursor: pointer;
       &:first-child {
         margin-left: 0;
