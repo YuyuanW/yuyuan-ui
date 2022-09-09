@@ -8,43 +8,38 @@
   </button>
 </template>
 
-<script lang="ts">
-export default {
-  name: "Switch",
-  props: {
-    value: Boolean,
-  },
-  setup(props, context) {
-    const toggle = () => {
-      context.emit("update:value", !props.value);
-    };
-
-    return { toggle };
-  },
+<script lang="ts" setup="props, context">
+const props = defineProps<{ value: boolean }>();
+const emit = defineEmits<{
+  (e: "update:value", visible: boolean): void;
+}>();
+const toggle = () => {
+  emit("update:value", !props.value);
 };
 </script>
 
 <style lang="scss">
+@use "sass:math";
 $h: 22px;
 $h2: $h - 4px;
 $h3: 11px;
 .yuyuan-switch {
-  width: $h * 2;
   height: $h;
+  width: $h * 2;
   border: none;
-  border-radius: $h3;
-  background: gray;
+  background: #bfbfbf;
+  border-radius: math.div($h, 2);
   position: relative;
   z-index: 0;
   > span {
     position: absolute;
+    top: 2px;
+    left: 2px;
     height: $h2;
     width: $h2;
     background: white;
-    border-radius: $h3;
-    top: 2px;
-    left: 2px;
-    transition: left 250ms;
+    border-radius: math.div($h2, 2);
+    transition: all 250ms;
   }
 
   &.yuyuan-checked {

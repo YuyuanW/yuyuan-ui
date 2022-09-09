@@ -23,32 +23,52 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: "Tabs",
-  props: {
-    selected: {
-      type: String,
-      default: "导航1",
-    },
-  },
-  setup(props, context) {
-    const defaults = context.slots.default();
-    // console.log(defaults[0].props.title);
-    defaults.forEach((element) => {
-      if (element.type.name !== "Tab") {
-        throw new Error("Tabs的子标签必须为Tab");
-      }
-    });
-    const titles = defaults.map((element) => {
-      return element.props.title;
-    });
-    const select = (title: string) => {
-      context.emit("update:selected", title);
-    };
+<script lang="ts" setup="props, context">
+import Tab from "./Tab.vue";
+import { computed, ref, watchEffect, onMounted, useSlots } from "vue";
+// ** References: https://vitejs.dev/guide/features.html#typescript */
+import type { Component } from "vue";
+const props = defineProps<{ selected: string }>();
+const emit = defineEmits<{
+  (e: "update:selected", title: string): void;
+}>();
+const selectedItem = ref<HTMLDivElement>(null);
+const indicator = ref<HTMLDivElement>(null);
+const container = ref<HTMLDivElement>(null);
 
-    return { defaults, titles, select };
-  },
+onMounted(() => {
+  watchEffect(
+    () => {
+      const { width } = selectedItem.value.getBoundingClientRect();
+      indicator.value.style.width = width + "px";
+      const { left: left1 } = container.value.getBoundingClientRect();
+      const { left: left2 } = selectedItem.value.getBoundingClientRect();
+      const left = left2 - left1;
+      indicator.value.style.left = left + "px";
+    },
+    {
+      flush: "post",
+    }
+  );
+});
+const slots = useSlots();
+const defaults = slots.default();
+defaults.forEach((tag) => {
+  if ((tag.type as Component).name !== Tab.name) {
+    throw new Error("Tabs 子标签必须是 Tab");
+  }
+});
+
+const current = computed(() => {
+  return defaults.find((tag) => tag.props.title === props.selected);
+});
+
+const titles = defaults.map((tag) => {
+  return tag.props.title;
+});
+
+const select = (title: string) => {
+  emit("update:selected", title);
 };
 </script>
 

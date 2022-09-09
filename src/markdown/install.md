@@ -2,13 +2,13 @@
 
 打开终端运行下列命令：
 
-```
+```bash
 npm install yuyuan-ui-one
 ```
 
 或
 
-```
+```bash
 yarn add yuyuan-ui-one
 ```
 

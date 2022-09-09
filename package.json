@@ -1,32 +1,34 @@
 {
   "name": "yuyuan-ui-one",
-  "version": "0.0.1",
-  "files": ["dist/lib/*"],
+  "version": "0.0.2",
+  "files": [
+    "dist/lib/*"
+  ],
   "main": "dist/lib/yuyuan.js",
+  "module": "dist/lib/yuyuan.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
   "resolutions": {
-    "node-sass": "npm:sass@^1.26.11"
-  },
-  "dependencies": {
-    "github-markdown-css": "^5.1.0",
-    "marked": "^1.1.1",
-    "prismjs": "^1.29.0",
-    "vue": "^3.0.4",
-    "vue-router": "^4.1.5"
+    "node-sass": "npm:sass@latest"
   },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.4",
-
     "@vitejs/plugin-vue": "3.0.3",
     "rollup-plugin-esbuild": "4.9.3",
     "rollup-plugin-scss": "3.0.0",
     "rollup-plugin-terser": "7.0.2",
     "sass": "1.54.5",
-    "vite": "3.0.9"
+    "vite": "3.0.9",
+    "vue": "3.2.37",
+    "vue-router": "4",
+    "marked": "1.1.1",
+    "prismjs": "1.21.0",
+    "github-markdown-css": "4.0.0"
+  },
 
-
+  "peerDependencies": {
+    "vue": "3.2.37",
+    "github-markdown-css": "4.0.0"
   }
 }
