@@ -64,11 +64,13 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
+
     /* background: lightgreen; */
   }
 }
 aside {
-  background: lightblue;
+  background: #ace0f9;
+  /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
   width: 150px;
   padding: 16px 0px;
   position: fixed;
